@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Quick Replies</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h2>MailSwift</h2>
+        <div class="theme-toggle-container">
+            <div class="toggle-switch">
+                <label class="switch-label">
+                    <input id="themeToggle" type="checkbox" class="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <h3>Formal Reply</h3>
+    <div id="formalReply" class="reply">Generating...</div>
+    <button id="copyFormal" class="copy-btn">
+        <span>Copy</span>
+        <span>Copied!</span>
+    </button>
+
+    <h3>Casual Reply</h3>
+    <div id="casualReply" class="reply">Generating...</div>
+    <button id="copyCasual" class="copy-btn">
+        <span>Copy</span>
+        <span>Copied!</span>
+    </button>
+
+    <script src="popup.js"></script>
+</body>
+</html>

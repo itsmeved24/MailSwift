@@ -1,0 +1,176 @@
+/* Default Light Theme */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --reply-bg: #e0e0de;
+    --reply-text: #333333;
+    --btn-bg: #e0e0de;
+    --btn-text: #000000;
+    --btn-hover-bg: #0e418f;
+    --btn-hover-text: #b5ccf3;
+    --header-bg: #f5f5f5;
+    --transition-speed: 0.3s;
+}
+
+/* Alternative Dark mode theme color palette */
+
+[data-theme="dark"] {
+    --bg-color: #222222;
+    --text-color: #e0e0e0;
+    --reply-bg: #3a3a3a;
+    --reply-text: #e0e0e0;
+    --btn-bg: #444444;
+    --btn-text: #e0e0e0;
+    --btn-hover-bg: #0e418f;
+    --btn-hover-text: #b5ccf3;
+    --header-bg: #333333;
+}
+
+/* Apply the smooth transition to all elements except copy button */
+body, .header, h2, h3, .reply {
+    transition: background-color var(--transition-speed) ease,
+                color var(--transition-speed) ease;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    width: 300px;
+    padding: 10px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    margin-bottom: 10px;
+    background-color: var(--header-bg);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+h2, h3 {
+    color: var(--text-color);
+}
+
+.reply {
+    background: var(--reply-bg);
+    color: var(--reply-text);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.copy-btn {
+    background-color: var(--btn-bg);
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition-duration: 500ms;
+    position: relative;
+}
+
+.copy-btn span:first-child {
+    color: var(--btn-text);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.copy-btn span:last-child {
+    position: absolute;
+    color: var(--btn-hover-text);
+    opacity: 0;
+    transform: translateY(100%) translateX(-50%);
+    left: 50%;
+    top: 50%;
+    height: 14px;
+    line-height: 13px;
+}
+
+.copy-btn:focus {
+    background-color: var(--btn-hover-bg);
+    width: 120px;
+    height: 40px;
+    transition-delay: 50ms;
+    transition-duration: 500ms;
+}
+
+.copy-btn:focus span:first-child {
+    color: var(--btn-hover-text);
+    transform: translateX(-50%) translateY(-150%);
+    opacity: 0;
+    transition-duration: 500ms;
+}
+
+.copy-btn:focus span:last-child {
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 1;
+    transition-delay: 100ms;
+    transition-duration: 500ms;
+}
+
+/* Theme toggle styles */
+.theme-toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.switch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 0 solid #bbb;
+    border-radius: 20px;
+    margin: 0;
+}
+
+.checkbox {
+    display: none;
+}
+
+.slider {
+    display: block;
+    width: 40px;
+    height: 25px;
+    background-color: #3C3C3C;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3.5px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.checkbox:checked + .slider {
+    background-color: #2196F3;
+}
+
+.checkbox:checked + .slider:before {
+    transform: translateX(15px);
+}
